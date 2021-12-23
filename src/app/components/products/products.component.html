@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">Prekių sąrašas</div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr >
+                    <th>Prekės pavadinimas</th>
+                    <th>Kaina</th>
+                    <th>Kiekis</th>
+                    <th style="width: 210px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>
+                        <button class="btn btn-info" (click)="onEdit(product.id)">Koreguoti</button>&nbsp;
+                        <button class="btn btn-danger" (click)="onDelete(product.id)">Ištrinti</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
